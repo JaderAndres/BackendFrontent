@@ -1,0 +1,30 @@
+<!-- MODALES DE ADICIONAR Y ACTUALIZAR INSPECCION-->
+
+<div class="tablaModal">
+<form>
+  <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo inspección</label>
+      <input type="text" class="form-control" name="tipoInspeccionId" [(ngModel)] = "tipoInspeccionId" *ngIf="inspeccion.id !=0" disabled hidden>
+      <!-- <select class="form-select" name="inspectionTypeId" id="inspectionTypeId" [(ngModel)]="tipoInspeccionId" *ngIf="inspeccion.id == 0"> -->
+      <select class="form-select" name="inspectionTypeId" id="inspectionTypeId" [(ngModel)]="tipoInspeccionId">
+        <option *ngFor="let type of inspectiontypeList$|async" [value]="type.id">{{type.nombre}}</option>
+      </select>
+  </div>
+  <div class="mb3">
+    <label for="estado" class="form-label">Estado</label>
+    <input type="text" class="form-control" [(ngModel)]="estado" name="estado">
+  </div>
+  <br/>
+  <div class="mb3">
+    <label for="comentarios" class="form-label">Comentarios</label>
+    <input type="text" class="form-control" [(ngModel)]="comentarios" name="comentarios">
+  </div>
+  <br/>
+  <div class="mb3 text-center">
+      <!-- Nota: si la propiedad 'inspeccion.id' es igual a cero se muestra el botón de adicionar -->
+      <!-- <button class="btn btn-primary me-3" style="width:100px" (click)="agregar()" *ngIf="inspeccion.id == 0">Adicionar</button> -->
+      <button id="botonAdicionarModal" class="btn" style="width:100px" (click)="agregar()" *ngIf="inspeccion.id == 0">Adicionar</button>
+      <button id="botonActualizarModal" class="btn" style="width:100px" (click)="update()"  *ngIf="inspeccion.id != 0">Actualizar</button>
+  </div>
+</form>
+</div>

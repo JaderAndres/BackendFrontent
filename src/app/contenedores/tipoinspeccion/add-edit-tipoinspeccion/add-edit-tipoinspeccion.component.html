@@ -1,0 +1,18 @@
+<!-- MODALES DE ADICIONAR Y ACTUALIZAR TIPO INSPECCION-->
+
+<div class="tablaModal">
+  <form>
+    <br/>
+    <div class="mb12">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre">
+    </div>
+    <br/>
+    <div class="mb12 text-center">
+        <!-- Nota: si la propiedad 'tipoinspeccion.id' es igual a cero se muestra el botón de adicionar -->
+        <!-- <button class="btn btn-primary me-3" style="width:100px" (click)="agregar()" *ngIf="inspeccion.id == 0">Adicionar</button> -->
+        <button id="botonAdicionarModal" class="btn" style="width:100px" (click)="agregar()" *ngIf="tipoinspeccion.id == 0">Adicionar</button>
+        <button id="botonActualizarModal" class="btn" style="width:100px" (click)="update()"  *ngIf="tipoinspeccion.id != 0">Actualizar</button>
+    </div>
+  </form>
+  </div>

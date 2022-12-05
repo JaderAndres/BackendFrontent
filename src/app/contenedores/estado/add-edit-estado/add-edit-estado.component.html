@@ -1,0 +1,17 @@
+<!-- MODALES DE ADICIONAR Y ACTUALIZAR ESTADO-->
+
+<div class="tablaModal">
+  <form>
+    <div class="mb12">
+      <label for="opcionestado" class="form-label">Opción estado</label>
+      <input type="text" class="form-control" [(ngModel)]="opcionestado" name="opcionestado">
+    </div>
+    <br/>
+    <div class="mb12 text-center">
+        <!-- Nota: si la propiedad 'inspeccion.id' es igual a cero se muestra el botón de adicionar -->
+        <!-- <button class="btn btn-primary me-3" style="width:100px" (click)="agregar()" *ngIf="inspeccion.id == 0">Adicionar</button> -->
+        <button id="botonAdicionarModal" class="btn" style="width:100px" (click)="agregar()" *ngIf="estado.id == 0">Adicionar</button>
+        <button id="botonActualizarModal" class="btn" style="width:100px" (click)="update()"  *ngIf="estado.id != 0">Actualizar</button>
+    </div>
+  </form>
+  </div>
